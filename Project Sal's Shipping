@@ -1,0 +1,38 @@
+#Premium Shipping
+prem_shipp_cost = 125.00
+
+#Standard Shipping
+def ground_shipp_cost (weight):
+  if weight <= 2:
+    ppp = 1.50
+  elif weight <= 6:
+    ppp = 3.00
+  elif weight <= 10:
+    ppp = 4.00
+  else:
+    ppp = 4.75
+  return 20 + (ppp * weight)
+
+#Drone shipping
+def drone_shipp_cost (weight):
+  if weight <= 2:
+    ppp = 4.50
+  elif weight <= 6:
+    ppp = 9.00
+  elif weight <= 10:
+    ppp = 12.00
+  else:
+    ppp = 14.25
+  return (ppp * weight)
+
+#Cheapest Shipping Calculator
+def chpst_shipp_calc (weight):
+  if ground_shipp_cost (weight) < prem_shipp_cost and ground_shipp_cost (weight) < drone_shipp_cost (weight):
+    return ("You should ship using Ground Shipping, it will cost $" + str(ground_shipp_cost (weight)))
+  elif prem_shipp_cost < ground_shipp_cost (weight) and prem_shipp_cost < drone_shipp_cost (weight):
+    return ("You should ship using Premium Ground Shipping, it will cost $" + str(prem_shipp_cost))
+  elif drone_shipp_cost (weight) < ground_shipp_cost (weight) and drone_shipp_cost (weight) < prem_shipp_cost:
+    return ("You should ship using Drone Shipping, it will cost $" + str(drone_shipp_cost (weight)))
+
+#Testing the calculator for a Package that weights 4.8 pounds
+print (chpst_shipp_calc(weight))
