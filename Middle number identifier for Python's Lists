@@ -1,0 +1,13 @@
+#Write your function here
+def middle_element(lst):
+  if len(lst) % 2 == 1: #so, it is Odd
+    mid_index = int((len(lst)-1) / 2)
+    return lst [mid_index]
+  else: #so, if len(lst) % 2 == 0, or Even
+    div = int((len(lst) / 2)) #14/2 = 7
+    mid_index_avg = ((lst[div-1] + lst[div]) / 2)
+#7+8/2 = 7.5
+    return mid_index_avg
+
+#Uncomment the line below when your function is done
+print(middle_element([1,2,3,4,5,6,7,8,9,10,11,12,13,14]))
