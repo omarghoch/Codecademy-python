@@ -1,0 +1,28 @@
+#Write your function here
+'''
+def odd_indices(lst):
+  new = []
+  for index in range (1, len(lst), 2):
+    new.append (lst[index])
+  return new
+'''
+
+# <alt> method by jephos249:
+'''
+def odd_indices(lst):
+  new = []
+  odds = [i for i in range(len(lst)) if i % 2 == 1]
+  for odd in odds:
+   new.append(lst[odd])
+  return new
+#Uncomment the line below when your function is done
+print(odd_indices([4, 3, 7, 10, 11, -2, 7, 2, -8, 9]))
+'''
+#<alt> without any function, to print/get only Odds or Evens indices!! by Ivicini
+lst = [4, 3, 7, 10, 11, -2, 7, 2, -8, 9]
+#Only Odd indices:
+print (lst[0:10:1])
+#in the square brackets reads: [first index : lenght of list : interval]
+#Only Even indices:
+print (lst [0::2])
+
